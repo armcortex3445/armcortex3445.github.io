@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>브라우저 개요 | armcortex3445-blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="배경 프론트 개발 시 사용되는 브라우저에 대해 알아본다. 브라우저에 대한 간단한 개념을 학습한다.  브라우저의 저장소쿠키 (document.cookie) 방법 정의 : 브라우저에 저장되는 작은 크기의 문자열  특징  name&#x3D;value; 형식으로 구성되어있다.1n1&#x3D;value1; n2&#x3D;value2; n3&#x3D;value3; name&#x3D;value">
+<meta property="og:type" content="article">
+<meta property="og:title" content="브라우저 개요">
+<meta property="og:url" content="https://armcortex3445.github.io/2025/03/16/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EA%B0%9C%EC%9A%94/index.html">
+<meta property="og:site_name" content="armcortex3445-blog">
+<meta property="og:description" content="배경 프론트 개발 시 사용되는 브라우저에 대해 알아본다. 브라우저에 대한 간단한 개념을 학습한다.  브라우저의 저장소쿠키 (document.cookie) 방법 정의 : 브라우저에 저장되는 작은 크기의 문자열  특징  name&#x3D;value; 형식으로 구성되어있다.1n1&#x3D;value1; n2&#x3D;value2; n3&#x3D;value3; name&#x3D;value">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2025-03-16T09:22:26.000Z">
+<meta property="article:modified_time" content="2025-03-16T09:23:56.848Z">
+<meta property="article:author" content="armcortex3445">
+<meta property="article:tag" content="browser">
+<meta property="article:tag" content="cookie">
+<meta property="article:tag" content="local-storage">
+<meta property="article:tag" content="session-storage">
+<meta property="article:tag" content="index-db">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="armcortex3445-blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">armcortex3445-blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">How to recognize</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="검색"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="검색"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://armcortex3445.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-브라우저-개요" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/16/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EA%B0%9C%EC%9A%94/" class="article-date">
+  <time class="dt-published" datetime="2025-03-16T09:22:26.000Z" itemprop="datePublished">2025-03-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/fronted/">fronted</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      브라우저 개요
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="배경"><a href="#배경" class="headerlink" title="배경"></a>배경</h1><ul>
+<li>프론트 개발 시 사용되는 브라우저에 대해 알아본다.</li>
+<li>브라우저에 대한 간단한 개념을 학습한다.</li>
+</ul>
+<h2 id="브라우저의-저장소"><a href="#브라우저의-저장소" class="headerlink" title="브라우저의 저장소"></a>브라우저의 저장소</h2><h3 id="쿠키-document-cookie-방법"><a href="#쿠키-document-cookie-방법" class="headerlink" title="쿠키 (document.cookie) 방법"></a>쿠키 (document.cookie) 방법</h3><ul>
+<li><p>정의 : 브라우저에 저장되는 작은 크기의 문자열</p>
+</li>
+<li><p>특징</p>
+<ul>
+<li>name&#x3D;value; 형식으로 구성되어있다.<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n1=value1; n2=value2; n3=value3;</span><br></pre></td></tr></table></figure></li>
+<li>name&#x3D;value 쌍운 4KB이하 크기여야한다.</li>
+<li>도메인 하나당 저장할 수 있는 쿠키 개수는 약 20여개로 제한적이며 브라우저 마다 개수가 다릅니다.</li>
+<li>쿠키는 기본적으로 도메인만 확인하며 HTTP&#x2F;HTTPS 프로토콜은 확인하지 않습니다.</li>
+<li>여러가지 옵션이 존재한다. 브라우저 버전에따라 미지원할 수 있습니다.<ul>
+<li>path : 쿠키 접근을 허용할 URL 경로 또는 하위경로.</li>
+<li>domain : 쿠키에 접근 가능한 도메인 지정. 단, 제약사항이 있음.</li>
+<li>expires : 유효한 일자를 지정. 반드시 GMT 포맷으로 설정 필요</li>
+<li>max-age : 유효한 시간(초)를 지정.</li>
+<li>secure : HTTPS로 통신하는 경우에만 쿠키가 전송하도록 설정</li>
+<li>samesite : XSRF 공격을 막기위한 옵션.</li>
+<li>httpOnly : 클라이언트 측 스크립트의 쿠키 사용 불가 설정.</li>
+</ul>
+</li>
+<li>쿠키 옵션 형식은 name&#x3D;value 쌍뒤에 나열됩니다.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// user 쿠기에 path, expires 옵션이 존재</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="property">cookie</span> = <span class="string">&quot;user=John; path=/; expires=Tue, 19 Jan 2038 03:14:07 GMT&quot;</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>생성 방법</strong></p>
+<ol>
+<li>서버가 HTTP 응답 헤더의 Set-Cookie에 내용을 넣어서 브라우저에 전달.</li>
+<li>브라우저는 내용을 자체적으로 저장</li>
+<li>생성된 쿠키는 동일서버에 요청을 보낼 때마다, 요청 헤더에 넣어서 함께 전달</li>
+</ol>
+</li>
+<li><p>브라우저에서 JS로 쿠키 접근 방법</p>
+<ul>
+<li>document.cookie 프로퍼티를 이용</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">alert</span>(<span class="variable language_">document</span>.<span class="property">cookie</span>); <span class="comment">// cookie1=value1; cookie2=value2;...</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>브라우저에서 JS로 쿠키 쓰는 방법</strong></p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="property">cookie</span> = <span class="string">&quot;user=John&quot;</span>; <span class="comment">// 이름이 &#x27;user&#x27;인 쿠키의 값만 갱신함</span></span><br><span class="line"><span class="title function_">alert</span>(<span class="variable language_">document</span>.<span class="property">cookie</span>); <span class="comment">// 모든 쿠키 보여주기</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 특수 값(공백)은 인코딩 처리해 줘야 합니다.</span></span><br><span class="line"><span class="keyword">let</span> name = <span class="string">&quot;my name&quot;</span>;</span><br><span class="line"><span class="keyword">let</span> value = <span class="string">&quot;John Smith&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 인코딩 처리를 해, 쿠키를 my%20name=John%20Smith 로 변경하였습니다.</span></span><br><span class="line"><span class="variable language_">document</span>.<span class="property">cookie</span> = <span class="built_in">encodeURIComponent</span>(name) + <span class="string">&quot;=&quot;</span> + <span class="built_in">encodeURIComponent</span>(value);</span><br><span class="line"></span><br><span class="line"><span class="title function_">alert</span>(<span class="variable language_">document</span>.<span class="property">cookie</span>); <span class="comment">// ...; my%20name=John%20Smith</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>서드파트 쿠키</strong></p>
+<ul>
+<li>정의 : 사용자가 방문 중인 도메인이 아닌 다른 도메인에서 설정한 쿠키</li>
+<li>예시<ul>
+<li>광고 배너<ul>
+<li>서드 파티 쿠키에 사용자 식별 정보를 저장하고, 사용자가 방문한 웹사이트마다 광고배너에서 GET 요청 발생시 사용자 사용 행태를 추적함</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>사용자 개인 정보 보호 법안</strong></p>
+<ul>
+<li>쿠키 등을 사용하여 사용자 개인 정보를 저장할 때, 나라 또는 연합마다 법안을 살펴바야합니다.</li>
+<li>예시<ul>
+<li>EU는 GDPR 법령을 통해 쿠키를 사용하여 추적하는 경우 사용자의 명시적 허가를 얻어야한다는 법안이 존재</li>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>참조</strong></p>
+<ul>
+<li>모던 자바스크립트<br>:<a target="_blank" rel="noopener" href="https://ko.javascript.info/cookie">https://ko.javascript.info/cookie</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="Local-Storage"><a href="#Local-Storage" class="headerlink" title="Local Storage"></a>Local Storage</h3><ul>
+<li><p>정의 : 브라우저 내에 키-값 쌍을 저장하는 web storage object</p>
+</li>
+<li><p>특징</p>
+<ul>
+<li>iterable 객체가 아닙니다.</li>
+<li>키와 값은 반드시 문자열이어야합니다.</li>
+<li>만료되지 않습니다.</li>
+<li>크기 제한은 5MB 정도이며, 브라우저마다 다릅니다.</li>
+<li>오리진(domain,port,protocol)만 같다면 url 경로는 달라도 key-value가 공유됩니다.</li>
+<li>브라우저를 껐다 켜도 데이터가 유지됩니다.</li>
+</ul>
+</li>
+<li><p><strong>메서드</strong></p>
+<ul>
+<li>setItem(key,value) : 키-값 쌍을 보관합니다.</li>
+<li>getItem(key) : 키에 해당하는 값을 읽습니다.</li>
+<li>removeItem(key) : 키와 해당값을 삭제합니다.</li>
+<li>clear() : 모든 것을 삭제합니다.</li>
+<li>key(index) : 인덱스에 해당하는 키를 받아옵니다.</li>
+<li>length : 저장된 항목의 개수를 얻습니다.</li>
+</ul>
+</li>
+<li><p><strong>필드</strong></p>
+<ul>
+<li>length : 저장된 항목의 개수를 얻습니다.</li>
+</ul>
+</li>
+<li><p><strong>예제</strong></p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//예제1 : 순회</span></span><br><span class="line"><span class="keyword">let</span> keys = <span class="title class_">Object</span>.<span class="title function_">keys</span>(<span class="variable language_">localStorage</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">of</span> keys) &#123;</span><br><span class="line">  <span class="title function_">alert</span>(<span class="string">`<span class="subst">$&#123;key&#125;</span>: <span class="subst">$&#123;<span class="variable language_">localStorage</span>.getItem(key)&#125;</span>`</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//예제2 : 키-값 쌍 생성</span></span><br><span class="line"><span class="variable language_">localStorage</span>.<span class="title function_">setItem</span>(<span class="string">&quot;user&quot;</span>, <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(&#123; <span class="attr">name</span>: <span class="string">&quot;John&quot;</span> &#125;));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 잠시 후</span></span><br><span class="line"><span class="keyword">let</span> user = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(<span class="variable language_">localStorage</span>.<span class="property">user</span>);</span><br><span class="line"><span class="title function_">alert</span>(user.<span class="property">name</span>); <span class="comment">// John</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>Storage Event</strong></p>
+<ul>
+<li>정의 : Local 또는 Session Storage가 갱신될 때 발생하는 이벤트</li>
+<li>특징<ul>
+<li>다음 프로퍼티를 지원합니다.<ul>
+<li>key : 변경된 데이터의 키</li>
+<li>oldValue : 이전 값</li>
+<li>newValue : 새로운 값</li>
+<li>url : 갱신이 일어난 문서의 url</li>
+<li>storageArea : 갱신이 일어난 localStorage 또는 SessionStorage 객체</li>
+</ul>
+</li>
+<li>이벤트를 발생시킨 window 객체를 제외하고 스토리지에 접근 가능한 window 객체 전부에서 이벤트가 발생합니다.</li>
+<li>event.url을 통해 이벤트가 갱신된 문서의 URL을 확인 할 수 있습니다.</li>
+<li>이벤트를 통해서, Storage 변화에 대한 응답 로직을 추가할 수 있습니다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>출처<br>ref:<a target="_blank" rel="noopener" href="https://ko.javascript.info/localstorage">https://ko.javascript.info/localstorage</a></p>
+</li>
+</ul>
+<h3 id="SessionStorage"><a href="#SessionStorage" class="headerlink" title="SessionStorage"></a>SessionStorage</h3><ul>
+<li><p>정의 : 세션이 유지되는 동안, 브라우저 내에 키-값 쌍을 저장하는 web storage object</p>
+</li>
+<li><p>특징</p>
+<ul>
+<li>세션에 의존합니다.</li>
+<li>새로고침을 해도 데이터가 유지됩니다.</li>
+<li>그외에는 Local Storage와 동일합니다.</li>
+</ul>
+</li>
+<li><p><strong>세션이 유지되는 경우</strong></p>
+<ul>
+<li>현재 탭에서만 동일한 오리진에서 자바스크립트를 실행하는 경우</li>
+<li>하나의 탭에 여러개의 iframe이 있는 경우<ul>
+<li>iframe 포함하여 모두 동일한 오리진에서 왔다고 취급되어 session Storage가 공유됩니다.</li>
+</ul>
+</li>
+<li>즉, 현재 탭에서 벗어나면 데이터는 사라집니다.</li>
+</ul>
+</li>
+<li><p>출처<br>ref :<a target="_blank" rel="noopener" href="https://ko.javascript.info/localstorage">https://ko.javascript.info/localstorage</a></p>
+</li>
+</ul>
+<h3 id="Cookie와-Local-Session-Storage-차이점"><a href="#Cookie와-Local-Session-Storage-차이점" class="headerlink" title="Cookie와 Local &amp; Session Storage 차이점"></a>Cookie와 Local &amp; Session Storage 차이점</h3><ol>
+<li>네트워크 요청시 서버 전송 유무<ul>
+<li>쿠키는 생성된 도메인 서버에 요청을 보낼때, 자동으로 서버로 전송됩니다.</li>
+<li>반면, Local &amp; Session Storage는 네트워크 요청시 서버로 전성되지 않습니다.</li>
+</ul>
+</li>
+<li>저장 용량 차이<ul>
+<li>쿠키는 자동으로 전송되므로 약 2KB의 용량을 갖습니다.</li>
+<li>반면, Local &amp; Session Storage는 2MB 이상의 용량을 가질 수 있으며, 개발자가 Storage 구성 방식을 설정할 수 있습니다.</li>
+</ul>
+</li>
+<li>조작 방식 차이<ul>
+<li>쿠키는 HTTP 헤더와 자바스크립트를 사용하여 조작할 수 있습니다.</li>
+<li>반면, Local &amp; Session Storage는 자바스크립트 내에서만 수행됩니다.</li>
+</ul>
+</li>
+<li>접근 판단 유무<ul>
+<li>쿠키는 기본적으로 도메인만으로 접근 권한을 판단합니다.<br>secure 허용시 HTTPS 프로토콜만 접근 허용합니다.</li>
+<li>Local &amp; Session Storage는 도메인,프로토콜,포트로 정의되는 Origin으로 묶어서 데이터 접근 권한 허용을 판단합니다.</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>출처<br>ref : <a target="_blank" rel="noopener" href="https://ko.javascript.info/localstorage">https://ko.javascript.info/localstorage</a></li>
+</ul>
+<h3 id="Indexed-DB"><a href="#Indexed-DB" class="headerlink" title="Indexed DB"></a>Indexed DB</h3><!-- 현재는 사용할 예정아니므로, 존재와 간략한 특징만 명시함 -->
+
+<ul>
+<li><p>정의 : 브라우저에서 생성된 DB</p>
+</li>
+<li><p>특징</p>
+<ul>
+<li>key-value 쌍을 저장</li>
+<li>value 값은 여러가지 타입이 가능</li>
+<li>트랜잭션 기능 제공</li>
+<li>키 범위 쿼리와 인덱스 기능 제공</li>
+<li>localStorage 보다 더 거대한 용량 제공</li>
+<li>동일 origin에서만 접근 가능</li>
+</ul>
+</li>
+<li><p>사용 예제</p>
+<ul>
+<li>오프라인 앱</li>
+</ul>
+</li>
+<li><p>출처<br>ref :<a target="_blank" rel="noopener" href="https://javascript.info/indexeddb">https://javascript.info/indexeddb</a></p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://armcortex3445.github.io/2025/03/16/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EA%B0%9C%EC%9A%94/" data-id="cm8bfvn7l0000icuzaydzeahs" data-title="브라우저 개요" class="article-share-link"><span class="fa fa-share">공유</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/browser/" rel="tag">browser</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cookie/" rel="tag">cookie</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/index-db/" rel="tag">index-db</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/local-storage/" rel="tag">local-storage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/session-storage/" rel="tag">session-storage</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/03/16/%ED%9A%8C%EA%B3%A0%EB%A1%9D-%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85-Stale-Closure/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">최신</strong>
+      <div class="article-nav-title">
+        
+          [회고록][트러블슈팅] Stale Closure
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/03/16/%EC%84%B1%EC%B0%B0-%EC%9D%BC%EC%83%81%ED%8C%A8%ED%84%B4%EA%B4%80%EB%A6%AC/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">이전</strong>
+      <div class="article-nav-title">성찰-일상패턴관리</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">카테고리</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/fronted/">fronted</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/frontend/">frontend</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%EC%84%B1%EC%B0%B0/">성찰</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">태그</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/browser/" rel="tag">browser</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computer-science/" rel="tag">computer-science</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/" rel="tag">cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/export/" rel="tag">export</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/import/" rel="tag">import</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/index-db/" rel="tag">index-db</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/local-storage/" rel="tag">local-storage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/module/" rel="tag">module</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react/" rel="tag">react</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/session-storage/" rel="tag">session-storage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/stale-closure/" rel="tag">stale-closure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/trouble-shooting/" rel="tag">trouble-shooting</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%83%9D%EC%82%B0%EC%84%B1-%ED%96%A5%EC%83%81/" rel="tag">생산성-향상</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%89%AC%EC%9A%B4%EC%BD%94%EB%93%9C/" rel="tag">쉬운코드</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EC%9D%BC%EC%83%81/" rel="tag">일상</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">태그 클라우드</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/computer-science/" style="font-size: 10px;">computer-science</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/export/" style="font-size: 10px;">export</a> <a href="/tags/import/" style="font-size: 10px;">import</a> <a href="/tags/index-db/" style="font-size: 10px;">index-db</a> <a href="/tags/local-storage/" style="font-size: 10px;">local-storage</a> <a href="/tags/module/" style="font-size: 10px;">module</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/session-storage/" style="font-size: 10px;">session-storage</a> <a href="/tags/stale-closure/" style="font-size: 10px;">stale-closure</a> <a href="/tags/trouble-shooting/" style="font-size: 10px;">trouble-shooting</a> <a href="/tags/%EC%83%9D%EC%82%B0%EC%84%B1-%ED%96%A5%EC%83%81/" style="font-size: 10px;">생산성-향상</a> <a href="/tags/%EC%89%AC%EC%9A%B4%EC%BD%94%EB%93%9C/" style="font-size: 10px;">쉬운코드</a> <a href="/tags/%EC%9D%BC%EC%83%81/" style="font-size: 10px;">일상</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">아카이브</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">3월 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">1월 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">최근 포스트</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/03/16/%EB%AA%A8%EB%93%88-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0/">모듈-이해하기</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/16/%ED%9A%8C%EA%B3%A0%EB%A1%9D-%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85-Stale-Closure/">[회고록][트러블슈팅] Stale Closure</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/16/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EA%B0%9C%EC%9A%94/">브라우저 개요</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/16/%EC%84%B1%EC%B0%B0-%EC%9D%BC%EC%83%81%ED%8C%A8%ED%84%B4%EA%B4%80%EB%A6%AC/">성찰-일상패턴관리</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/16/%EC%84%B1%EC%B0%B0-CS%EA%B0%80-%EC%A4%91%EC%9A%94%ED%95%9C%EC%9D%B4%EC%9C%A0/">[성찰] CS가 중요한 이유</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 armcortex3445<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
